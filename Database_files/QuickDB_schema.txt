@@ -1,0 +1,30 @@
+Table1
+-
+name varchar PK FK >- Table2.name
+MDVP_Fo_Hz int
+MDVP_Fhi_Hz int
+MDVP_Flo_Hz int
+MDVP_Jitter_% int
+MDVP_Jitter_Abs int
+MDVP_RAP int
+MDVP_PPQ int
+Jitter_DDP int
+MDVP_Shimmer int
+MDVP_Shimmer_db int
+
+Table2
+-
+name varchar PK 
+Shimmer_APQ3 int
+Shimmer_APQ5 int
+MDVP_APQ int
+Shimmer_DDA int
+NHR int
+HNR int
+status int
+RPDE int
+DFA int
+spread1 int
+spread2 int
+D2 int
+PPE int
