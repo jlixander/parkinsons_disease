@@ -1,0 +1,35 @@
+
+html {
+    /* background-color: lightblue; */
+    scroll-behavior: smooth;
+
+  }
+  
+  #first_panel {
+    height: 200px;
+    /* background-color:lightgray; */
+  }
+  
+  #second_panel {
+    height: auto;
+    /* background-color: lightslategray; */
+  }
+
+  #third_panel {
+      height: auto;
+      /* background-color: lightskyblue; */
+  }
+
+  #fourth_panel {
+      height: auto;
+  }
+
+/* 
+body,h1,h2,h3,h4,h5,h6 {font-family: sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1;
+} */
+
+
