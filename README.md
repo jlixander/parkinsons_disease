@@ -13,18 +13,18 @@ According to the Parkinson's Foundation, about 89 percent of people with Parkins
 * Can we train a model to detect Parkinson's Disease based on speech data?
 
 ## Challenges
-* Design a database to house speech signals and fully connect to Jupyter Notebook using Python
-* Acquiring an accuracy score above 80%
-* Data only contains 195 vocal signals from 31 individuals
+* Design a database to house speech signals and fully connect to Jupyter Notebook using Python.
+* Acquiring an accuracy score above 80%.
+* Data only contains 195 vocal signals from 31 individuals.
 
 ## About the Data
 * The dataset is from UCI's Machine-Learning Repository.
 * The data is composed of the following:
-    * A range of biomedical voice measurements from 31 people
-        * 23 out of 31 of the subjects have been diagnosed to have Parkinson's Disease (PD)
-        * There is a status column that distinguishes people with parkinson's (1) and people without (0)
-    * Each row corresponds to one of 195 voice recordings from the subjects
-    * Each subject has around 6 voice recordings
+    * A range of biomedical voice measurements from 31 people.
+        * 23 out of 31 of the subjects have been diagnosed to have Parkinson's Disease (PD).
+        * There is a status column that distinguishes people with parkinson's ***(1)*** and people without ***(0)***.
+    * Each row corresponds to one of 195 voice recordings from the subjects.
+    * Each subject has around 6 voice recordings.
 
 ### Matrix Columns
 * name - ASCII subject name and recording number
@@ -34,7 +34,7 @@ According to the Parkinson's Foundation, about 89 percent of people with Parkins
 * MDVP:Jitter(%),MDVP:Jitter(Abs),MDVP:RAP,MDVP:PPQ,Jitter:DDP - Several measures of variation in fundamental frequency
 * MDVP:Shimmer,MDVP:Shimmer(dB),Shimmer:APQ3,Shimmer:APQ5,MDVP:APQ,Shimmer:DDA - Several measures of variation in amplitude
 * NHR,HNR - Two measures of ratio of noise to tonal components in the voice
-* status - Health status of the subject (1) - Parkinson's, (0) - healthy
+* status - Health status of the subject ***(1)*** - Parkinson's, ***(0)*** - healthy
 * RPDE,D2 - Two nonlinear dynamical complexity measures
 * DFA - Signal fractal scaling exponent
 * spread1,spread2,PPE - Three nonlinear measures of fundamental frequency variation
@@ -46,25 +46,27 @@ According to the Parkinson's Foundation, about 89 percent of people with Parkins
     * Data type tranformation
     * Handle missing values
     * Fix errors
-* Only one column with non-quantitative data was removed for the ML model - "name"
-* Remaining attributes were split into training and test datasets
-* Lastly, attributes were scaled using StandardScaler()
-
-
-
-
-
-
-
+* Only one column with non-quantitative data was removed for the ML model - ***name***
+* Remaining attributes were split into training and test datasets.
+* Lastly, attributes were scaled using StandardScaler().
 
 ## Results
--
+* The BalancedRandomForest model achieved an 83.6% accuracy score.
+* The confusion matrix and classification report yielded the following:
+    * Model predicted TRUE __POSITIVE/TRUE NEGATIVE__ values at least 5x more than __FALSE POSITIVE/FALSE NEGATIVE__ values.
+    ![Confusion Matrix and Classification Report](https://raw.githubusercontent.com/jlixander/parkinsons_disease/main/Results_images/CM_CF.PNG)
+    * The classification report states that the model had difficulty predicting healthy status.
+    ![Importance of Attributes in Descending Order](https://raw.githubusercontent.com/jlixander/parkinsons_disease/main/Results_images/Importances.PNG)
 
 ## Summary
--
+* It is safe to assume that machine learning models can be used to predict if a person has Parkinson's Disease. The Balanced Random Forest model achieved an accuracy of 83.6% even with minimal data points. This can potentially be a non-invasive and more cost-effective way to determine diagnosis.
 
 ## Potential Next Steps in Machine Learning
--
+* Acquire more vocal data for both, people with parkinson’s disease, and those without.
+* Acquiring more vocal data for healthy individuals will more than likely positively affect the accuracy score because BRF models undersamples the required bootstrap to balance it.
+* Remove data column(s) that have less importance in the model’s prediction, such as ***mdvp_jitter_percent***, ***mdvp_jitter_abs***, and ***rpde***.
+* Use a deep learning neural network. The use of different activations and epochs may help achieve better accuracy scores even without more speech signal data points.
+
 
 ## Languages,Technologies, Tools, and Algorithms
 * Python/HTML/CSS/SQL
