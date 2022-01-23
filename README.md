@@ -54,9 +54,10 @@ According to the Parkinson's Foundation, about 89 percent of people with Parkins
 * The BalancedRandomForest model achieved an 83.6% accuracy score.
 * The confusion matrix and classification report yielded the following:
     * Model predicted TRUE __POSITIVE/TRUE NEGATIVE__ values at least 5x more than __FALSE POSITIVE/FALSE NEGATIVE__ values.
-    ![Confusion Matrix and Classification Report](https://raw.githubusercontent.com/jlixander/parkinsons_disease/main/Results_images/CM_CF.PNG)
-    * The classification report states that the model had difficulty predicting healthy status.
+    ![Confusion Matrix and Classification Report](https://raw.githubusercontent.com/jlixander/parkinsons_disease/main/Results_images/CM_CF.PNG)    
     ![Importance of Attributes in Descending Order](https://raw.githubusercontent.com/jlixander/parkinsons_disease/main/Results_images/Importances.PNG)
+    * The classification report states that the model had difficulty predicting healthy status.
+
 
 ## Summary
 * It is safe to assume that machine learning models can be used to predict if a person has Parkinson's Disease. The Balanced Random Forest model achieved an accuracy of 83.6% even with minimal data points. This can potentially be a non-invasive and more cost-effective way to determine diagnosis.
