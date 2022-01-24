@@ -53,7 +53,7 @@ According to the Parkinson's Foundation, about 89 percent of people with Parkins
 ## Results
 * The BalancedRandomForest model achieved an 83.6% accuracy score.
 * The confusion matrix and classification report yielded the following:
-    * Model predicted TRUE __POSITIVE/TRUE NEGATIVE__ values at least 5x more than __FALSE POSITIVE/FALSE NEGATIVE__ values.
+    * Model predicted __TRUE POSITIVE/TRUE NEGATIVE__ values at least 5x more than __FALSE POSITIVE/FALSE NEGATIVE__ values.
     ![Confusion Matrix and Classification Report](https://raw.githubusercontent.com/jlixander/parkinsons_disease/main/Results_images/CM_CF.PNG)    
     ![Importance of Attributes in Descending Order](https://raw.githubusercontent.com/jlixander/parkinsons_disease/main/Results_images/Importances.PNG)
     * The classification report states that the model had difficulty predicting healthy status.
