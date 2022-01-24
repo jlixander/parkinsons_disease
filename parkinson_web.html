@@ -8,48 +8,138 @@
     <link rel="stylesheet" href="static/css/style.css" type="text/css">
 </head>
 <body>
+    <article>
     <h1>Machine Learning Project</h1>
-    
+    <div class="table-of-content p-4 p-md-5">
+        <h4>Contents</h4>
+        <ul class="">
+            
+            <li class="toc2">
+                <a href="#first_panel">
+                    <span class="number"></span>
+                     What is Parkinson?
+                </a>
+            </li> 
+            <li class="toc2">
+                <a href="#second_panel">
+                    <span class="number"></span>
+                     The model
+                </a>
+            </li>
+            <li class="toc2">
+                <a href="#third_panel">
+                    <span class="number"></span>
+                     Results
+                </a>
+            </li>
+            <li class="toc2">
+                <a href="#fourth_panel">
+                    <span class="number"></span>
+                     Data Visualization
+                </a>
+            </li>
+        </ul>
+    </div>
 
     <!-- create the first section -->
     <div class= "main" id = "first_panel">
 
         <h2>What is Parkinson?</h2>
-        <p>definition
-            who's succeptible?
-            Why this Project?
-            What are we trying to accomplish?
-        </p>
+        <p>  Parkinson's disease is a progressive nervous system disorder that affects movement. Symptoms start gradually, sometimes starting with a barely noticeable tremor in just one hand. Tremors are common, but the disorder also commonly causes stiffness or slowing of movement.
+            In the early stages of Parkinson's disease, your face 
+            may show little or no expression. Your arms may not swing when you walk. Your speech may become soft or slurred. Parkinson's disease symptoms worsen as your condition progresses over time.
+                    </p>
+        <p> According to the Parkinson's Foundation, about 89 percent of people with Parkinson's disease experience speech and voice disorders.
+
+            Based on our research, we were interested in utilizing a machine learning model to use voice measurements to detect Parkinson's disease and therefore predict if an individual is at risk of suffering the disease in a non-invasive way.</p>
+
+        <p>In this project we would like to answer the following questions:
+                <li> 
+            How does parkinson's affect speech patterns?
+            <li>
+            What correlations can we find between the other attributes in the data set?
+            </li>
+            <li>
+            Can we find the  correlation between a patient's speech and their diagnosis of parkinson's?
+            </li>
+            <li>
+            Can we train a model to detect parkinson's based on speech data?
+            </li>
+            </p>
+
+
+
         <h4>Data</h4>
-        <p>features</p>
+
+        <p>We retrieved the data set from the UCI machine learning repository.This dataset is composed of:
+            <li> a range of biomedical voice measurements from 31 people </li>
+            <li>23 out of 31 of the subjects have Parkinson's disease (PD). </li>
+            <li>each row corresponds one of 195 voice recording from the subjects</li>
+            <li>each subject has around 6 voice recordings</li>
+            <li>a status column that distinguishes people with parkinson's (1) and people without (0)</li>
+            </p>
+
+            <p>At the beginning of our project, we chose to predict Gross Domestic Product based on the amount of electricity used in the US. 
+                Based on the data set we were using and the steps we outlined, we decided that too many factors would make our project challenging to accomplish in the course timeframe.
+                We came by the Parkinson's data set and decided it would be the right project to pursue based on its characteristics.
+                We reviewed the data and concluded the following:
+                The data did not require encoding, 
+                The data is 128 rows and may limit the training of our machine learning model. 
+                Since we had one data set, we moved it to PostgreSQL and split it into two data sets to start our data analysis.
+                </p>
     </div>
 
     <div class="main" id="second_panel">
-        <h2>Model</h2>
+        <h2>Model: Balanced Random Forest Classifier</h2>
         <h4>Random Forest </h4>
-        <p>why this model and not another one?</p>
-        <h4>Data Preprocessing</h4>
-        <p>cleaning/ posgres/ analysis</p>
+        <p> undersampling to maintain accuracy among large sets of data
+            High efficiency for large datasets 
+    - A very common algorithm in machine learning.
+    - Is a good way to balance any uneven data, leading to undersampling, the process of reducing the 	  size of the larger data within the dataset to maintain the smaller data. 
+    - The accuracy when using this algorithm is useful as it can work through very large datasets
+    - The ability to maintain accuracy within large datasets allows us to notice the outliers and also   
+      visualize data in clustering 
+    </p>
+
+    <p>We decided to use random forest because of its ability to maintain accuracy throughout the dataset. It is one of the algorithms that can handle many different inputs and the use of undersampling helps it maintain all the data. There is no limit to how many trees it can form, thus being efficient for datasets of any size, with multiple variables. It is also useful in regression analysis as well, not just classification. Because of its ability to analyze large sets of data, the accuracy is commonly a high level. For our topic, Parkinson's disease, it is very important we use a machine learning model that would take all features into account when predicting or analyzing the health status of patients. The model is one of the easiest and simplest to use when it comes to ensemble learning, with the ability to make as many trees to reach a prediction or classification. </p>
+    <p> When using the Random Forest Classification, it is still important to follow the steps of ensemble learning. 
+        To begin, the data should be trained and any necessary scaling should be done beforehand. 
+        After scaling and training the data, it should be resampled into the model. 
+        Then, after training the model to intake the data, the balanced accuracy score is able to be calculated. 
+        To measure the performance of the model, we are able to use the confusion matrix to assess all the values the algorithm can output, such as the high accuracy and precision the model is known for.
+        We then proceeded to analyze the imbalanced classification report.
+        To finish our analysis, we listed our features in the dataset in descending order to find the importance by percentage of each.  
+        </p>    
+    <!-- <h4>Data Preprocessing</h4> -->
+        <p>
+        </p>
     </div>
 
     <div class="main" id="third_panel">
         <h2>Results</h2>
         <h4>Key Findings</h4>
-        <p>findings and accuracy
-            weight of the features
-            deep learning
+        <p>We found that our model is .83 accurate. But we need to be cautious as the data offered some limitations </p>
+        <p>
+            <img src="static/img/conf_matrix_accuracy_classification.png" alt="" >
         </p>
-        <h4>Data Limitations</h4>
-        <p></p>
+        <!-- <h4>Data Limitations</h4>
+        <p>
+
+        </p> -->
 
     </div>
 
     <div class="main"   id="fourth_panel">
         <h2>Data Visualization</h2>
-        <p></p>
-        <div class='tableauPlaceholder' id='viz1642800805875' style='position: relative'><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Story1_16402829919060&#47;Story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1642800805875');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        <h4>Tableau Interactive Data Visualization</h4>
+            
+        <div class='tableauPlaceholder' id='viz1642965172091' style='position: relative'><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='ParkinsonsViz&#47;Story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1642965172091');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+
     </div>
-        
+
+</article>
+
 
 
 
