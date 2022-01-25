@@ -65,11 +65,17 @@
             <li>
             Can we train a model to detect parkinson's based on speech data?
             </li>
+
+        <h2>Challenges</h2>
+
+                <li>Design a database to house speech signals and fully connect to Jupyter Notebook using Python.</li>
+                <li>Acquiring an accuracy score above 80%.</li>
+                <li>Data only contains 195 vocal signals from 31 individuals.</li>
             </p>
 
 
 
-        <h4>Data</h4>
+       <h2>Data</h2>
 
         <p>We retrieved the data set from the UCI machine learning repository.This dataset is composed of:
             <li> a range of biomedical voice measurements from 31 people </li>
@@ -78,6 +84,18 @@
             <li>each subject has around 6 voice recordings</li>
             <li>a status column that distinguishes people with parkinson's (1) and people without (0)</li>
             </p>
+
+        <h4>Data Preprocessing</h4>
+        <p>Data Preprocessing
+            No major data cleaning required, such as:
+            Bucketing
+            Encoding
+            Data type tranformation
+            Handle missing values
+            Fix errors
+            Only one column with non-quantitative data was removed for the ML model - name
+            Remaining attributes were split into training and test datasets.
+            Lastly, attributes were scaled using StandardScaler().</p>
 
             <p>At the beginning of our project, we chose to predict Gross Domestic Product based on the amount of electricity used in the US. 
                 Based on the data set we were using and the steps we outlined, we decided that too many factors would make our project challenging to accomplish in the course timeframe.
@@ -121,10 +139,18 @@
         <p>We found that our model is .83 accurate. But we need to be cautious as the data offered some limitations
             while we also find the top 5 features of importance from the model are the following 
         <em > spread1, ppe, mdvp_fo_hz, spread2, mdvp_shimmer</em> </p>
+        <p><img src="static/img/corr_feat.png" alt="features correlation"></p>
         <p>
             <img src="static/img/conf_matrix_accuracy_classification.png" alt="matrix accuracy" >
         </p>
         <p><img src="static/img/features_importance.png" alt ="features" ></p>
+
+
+        <h4>Potential Next Step in Machine Learning </h4>
+        <p>Acquire more vocal data for both, people with parkinson’s disease, and those without.
+            Acquiring more vocal data for healthy individuals will more than likely positively affect the accuracy score because BRF models undersamples the required bootstrap to balance it.
+            Remove data column(s) that have less importance in the model’s prediction, such as mdvp_jitter_percent, mdvp_jitter_abs, and rpde.
+            Use a deep learning neural network. The use of different activations and epochs may help achieve better accuracy scores even without more speech signal data points.</p>
         <!-- <h4>Data Limitations</h4>
         <p>
 
