@@ -58,7 +58,7 @@ html {
   p {
       text-align: justify;
       text-indent: 45px;
-      text-transform: lowercase;
+      text-transform: auto;
       margin-left: 2cm;
       margin-top: 0cm;
       margin-right: 25%;
