@@ -50,6 +50,13 @@ According to the Parkinson's Foundation, about 89 percent of people with Parkins
 * Remaining attributes were split into training and test datasets.
 * Lastly, attributes were scaled using StandardScaler().
 
+### Machine Learning Model 
+* Balanced Random Forest Classifier 
+   * Random Forest is a decision tree algorithm that is used in regression or in this case, classification.
+   * Predictions are highly accurate because of how efficiently it can handle a lot of data. 
+   * Uses undersampling to include all features whether it is a minor part of the dataset or major part. 
+   * Uses the scaled trained dataset to test the dataset that was set aside for testing. 
+   * It is possible that it could take time to output results as it will have to read the entire dataset,the larger the dataset, the more time it will take. 
 ## Results
 * The BalancedRandomForest model achieved an 83.6% accuracy score.
 * The confusion matrix and classification report yielded the following:
